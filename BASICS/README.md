@@ -119,3 +119,11 @@ lrwxr-xr-x@  1 root  admin    11 Apr 22  2020 var -> private/var
 > nmap --help
 
 ## Finding Things
+
+Finding things can become a great challenge at first when learning Linux. Luckily, we hae some resources to do just that.
+
+### locate
+
+The keyword _locate_ followed by another keyword denoting what you'd like to find will go through your entire filesystem and locate evere occurance of that word.
+
+> locate [KEYWORD]
