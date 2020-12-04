@@ -120,10 +120,42 @@ lrwxr-xr-x@  1 root  admin    11 Apr 22  2020 var -> private/var
 
 ## Finding Things
 
-Finding things can become a great challenge at first when learning Linux. Luckily, we hae some resources to do just that.
+Finding things can become a great challenge at first when learning Linux. Luckily, we hae some resources to do just that. Keep in mind that each tool has pro and con aspects. So it will be up to you to decide which command will provide the best fit.
 
 ### locate
 
 The keyword _locate_ followed by another keyword denoting what you'd like to find will go through your entire filesystem and locate evere occurance of that word.
 
 > locate [KEYWORD]
+
+You will most likely get too many entries when using _locate_. Also, _locate_ uses a database that it only sycnhronized once a day. So you likely won't find new files from that day.
+
+### whereis
+
+If you're looking for a _binary_ file, you can use the _whereis_ command to locate it. This command returns the location of the binary, its source, and it's _man_ page.
+If you're looking for a _binary_ file, you can use the _whereis_ command to locate it. This command returns the location of the binary, its source, and it's _man_ page when available.
+
+> whereis [PARAMETER]
+
+### which
+
+The _which_ command is even more specific, it will return the location of the binaries in the PATH variable in Linux. 
+The PATH holds the directories in which the OS looks for the commands you execute at the command line. 
+
+## More powerful searches with find
+
+The _find_ command is considered the most powerful and flexible of the search utilities. It is capable of beginning as search in any designated directory  and looking for any number of different parameters:
+
+* file name
+* date or creation
+* date of modification
+* owner
+* group
+* size
+* permissions
+
+So basically, any characteristic of a directory. [1] First state the directory, [2] second, specify the type of file to search for, [3] Lastly, you give the name of the file being searched for.
+
+> burt@grs-beta / % find /[1] f[2] -name Discord[3]
+
+The _find_ command started at the top of the filesystem (/), wentt through every directory looking for Discord in the filename, and then listed all instances found. Remember that _find_ displays only __exact name__ matches.
