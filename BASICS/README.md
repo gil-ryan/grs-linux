@@ -159,3 +159,21 @@ So basically, any characteristic of a directory. [1] First state the directory, 
 > burt@grs-beta / % find /[1] f[2] -name Discord[3]
 
 The _find_ command started at the top of the filesystem (/), wentt through every directory looking for Discord in the filename, and then listed all instances found. Remember that _find_ displays only __exact name__ matches.
+
+### filtering with grep
+
+Most often you'll want to search for particular keywords, and this is best completed by filtering with _grep_.
+
+_grep_ is used a lot when piping _output_ from one command to another. Piping allows us to take the _output_ of one command and send it as _input_ to another command.
+
+#### ps
+
+The _ps_ command is used to display information about running processes.
+
+###
+
+## Modifying Files and Directories
+
+### Creating Files
+
+There are many ways to accomplish this.
